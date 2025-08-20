@@ -11,7 +11,7 @@ function IdeaInput({idea, setIdea, onGenerate}){
         value={idea}
         onChange={(e) => setIdea(e.target.value)}
         />
-        <button disabled={idea.length < 5} onClick={onGenerate}
+        <button disabled={idea.trim().length < 10} onClick={onGenerate}
         className='bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-xl transition-all disabled:bg-gray-500'>
         Generate Ideas
         </button>
