@@ -1,7 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 function IdeaInput({idea, setIdea, onGenerate}){
+       const inputRef = useRef();
 
+       useEffect(()=>{
+         inputRef.current?.focus();  
+       },[]);
  
 
        return (
@@ -9,6 +13,7 @@ function IdeaInput({idea, setIdea, onGenerate}){
         <textarea className="p-3 rounded-lg bg-gray-800 text-white resize-none h-32 focus:outline-none focus:ring-2 focus:ring-purple-500"
         placeholder="Enter your business idea..."
         value={idea}
+        ref = {inputRef}
         onChange={(e) => setIdea(e.target.value)}
         />
         <button disabled={idea.trim().length < 10} onClick={onGenerate}

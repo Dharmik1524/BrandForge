@@ -13,13 +13,14 @@ return (
           <div className="text-gray-300 mt-1">{tagline}</div>
           <div className="text-green-400 mt-2">{domain}</div>
         </div>
+        {tagline && 
         <button
           onClick={() => copy(domain)}
           className="self-start bg-white/10 hover:bg-white/20 text-white text-sm px-3 py-1 rounded-lg"
           title="Copy domain"
         >
-          Copy
-        </button>
+          Copy Domain
+        </button>}
       </div>
     </div>
   );
