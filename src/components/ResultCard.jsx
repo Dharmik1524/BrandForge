@@ -1,9 +1,15 @@
+import { useState } from "react";
+
 export default function ResultCard({data}){
 
     const { name, tagline, domain} = data;
+    const [copied, setCopied] = useState(false);
 
-    const copy = (text) => navigator.clipboard.writeText(text);
-
+    const copy = (text) => {
+      navigator.clipboard.writeText(text); 
+      setCopied(true);
+      setTimeout(()=> setCopied(false),1000);
+    }
 
 return (
     <div className="rounded-xl bg-gray-800 p-4">
@@ -19,7 +25,7 @@ return (
           className="self-start bg-white/10 hover:bg-white/20 text-white text-sm px-3 py-1 rounded-lg"
           title="Copy domain"
         >
-          Copy Domain
+          {copied ? "Copied" : "Copy"}
         </button>}
       </div>
     </div>

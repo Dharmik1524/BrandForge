@@ -18,13 +18,15 @@ const {
     error,
     onGenerate,
   } = useBrandGenerator();
+
+
   
 
   return (
     <div className='min-h-screen bg-gray-900 text-white p-6 flex flex-col items-center'>
-      <div className='w-full max-w-2xl'> 
+      <div className='w-full max-w-3xl'> 
       <Header />
-       <IdeaInput idea={idea} setIdea={setIdea} onGenerate={onGenerate} />
+       <IdeaInput idea={idea} setIdea={setIdea} onGenerate={onGenerate} isLoading={isLoading} />
 
       {isLoading &&  (<div className="mt-6 flex items-center gap-3 text-white/80"><div className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-white/20 border-t-white" />
             Generating ideas…

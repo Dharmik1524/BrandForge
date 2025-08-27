@@ -1,9 +1,9 @@
 function Header(){
 
     return (
-        <header className="mb-6 text-center">
-            <h1 className="text-4xl font-bold text-white"> BrandForge</h1>
-            <p className="text-gray-400 text-lg mt-2"> Start your business right with meaningful name, taglines and check available domains </p>
+        <header className="mt-7 mb-5 text-center">
+            <h1 className="text-5xl font-bold text-white"> BrandForge</h1>
+            <p className="text-gray-500 text-xl mt-2 "> Start your business right with meaningful name, taglines and available domains </p>
         </header>
     )
 }
