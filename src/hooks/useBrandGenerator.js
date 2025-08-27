@@ -87,7 +87,7 @@ else
 
       const data = await res.json();
 
-      const resultsWithId = data.map((item, index) => ({
+      const resultsWithId = data.map((item) => ({
         name: item.name,
         tagline: item.tagline,
         domain: item.domain,
