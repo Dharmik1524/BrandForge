@@ -85,15 +85,8 @@ else
 
       if (!res.ok) throw new Error("API error");
 
-      const data = await res.json();
-
-      const resultsWithId = data.map((item) => ({
-        name: item.name,
-        tagline: item.tagline,
-        domain: item.domain,
-      }));
-
-      setResult(resultsWithId);
+      const responseData = await res.json();
+      setResult(responseData);
     } catch (err) {
       console.error(err);
       setError("Failed to generate brand ideas. Please try again.");
